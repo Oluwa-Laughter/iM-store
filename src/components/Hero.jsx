@@ -19,10 +19,10 @@ const Hero = () => {
 
   return (
     <section className="w-full h-auto overflow-x-hidden">
-      <div className="w-screen h-[650px] relative">
+      <div className="relative">
         <div
-          className="w-[400vw] h-full flex transition-transform duration-1000"
           style={{ transform: `translateX(-${curSlide * 100}vw)` }}
+          className="flex transition-transform duration-1000"
         >
           <img
             src={data[0]}

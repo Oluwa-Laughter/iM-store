@@ -1,6 +1,6 @@
-import Product from "./Product";
+import ProductCard from "./ProductCard";
 
-const AllProducts = () => {
+const AllProducts = ({ products }) => {
   return (
     <section className="py-10">
       <div className="flex flex-col items-center gap-5">
@@ -19,7 +19,9 @@ const AllProducts = () => {
         </p>
       </div>
       <div className="max-w-screen-xl mx-auto grid grid-cols-4 gap-10 py-10">
-        <Product />
+        {products.map((item) => (
+          <ProductCard key={item.id} item={item} />
+        ))}
       </div>
     </section>
   );
