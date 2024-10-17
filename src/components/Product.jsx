@@ -1,15 +1,28 @@
 import React, { useEffect, useState } from "react";
 import { MdOutlineStar } from "react-icons/md";
+import { useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
+import { addToCart } from "../redux/iMstoreSlice";
+import { toast, ToastContainer } from "react-toastify";
 
 const Product = () => {
   const [details, setDetails] = useState({});
+  const [baseQuantity, setBaseQuantity] = useState(1);
+
+  const decreaseQuantity = () => {
+    baseQuantity > 1 ? setBaseQuantity(baseQuantity - 1) : setBaseQuantity(1);
+  };
+
+  const increaseQuantity = () => {
+    setBaseQuantity(baseQuantity + 1);
+  };
+
   const location = useLocation();
+  const dispatch = useDispatch();
   useEffect(() => {
     setDetails(location.state.item);
   }, [location]);
 
-  console.log(details);
   return (
     <section>
       <article className="max-w-screen-xl mx-auto my-10 flex gap-10">
@@ -29,8 +42,8 @@ const Product = () => {
           <div className="flex flex-col gap-3">
             <h2 className="text-3xl font-semibold">{details.title}</h2>
 
-            <div className="flex items-center gap-4 mt-3">
-              <p className="line-through text-gray-500">
+            <div className="flex items-center gap-4">
+              <p className="line-through font-base text-gray-500">
                 ${Number(Math.round(details.price)) + 20}
               </p>
 
@@ -38,38 +51,61 @@ const Product = () => {
                 ${details.price}
               </p>
             </div>
-            <div className="flex items-center gap-2 text-base">
+            <div className="flex items-center gap-2">
               <div className="flex text-base text-yellow-500">
                 {details.rating &&
                   details.rating.rate &&
-                  Array.from(
-                    { length: Math.round(details.rating.rate) },
-                    (_, i) => <MdOutlineStar key={i} />
-                  )}
+                  Array(Math.floor(details.rating.rate))
+                    .fill(0)
+                    .map((_, i) => <MdOutlineStar key={i} />)}
               </div>
               <p className="text-xs text-gray-500">
-                {details.rating.count} Customers Reviews
+                {details.rating && details.rating.count} Customers Reviews
               </p>
             </div>
           </div>
 
-          <p className="text-base text-gray-500 mt-3">{details.description}</p>
+          <p className="text-base text-gray-500 -mt-3 first-letter:capitalize ">
+            {details.description}
+          </p>
 
           <div className="flex gap-4">
             <div className="w-52 flex items-center justify-between text-gray-500 gap-4 border p-3">
               <p className="text-sm">Quantity</p>
               <div className="flex items-center gap-4 text-sm font-semibold">
-                <button className="border h-5 font-normal text-lg flex items-center justify-center px-2 hover:bg-gray-700 hover:text-white cursor-pointer duration-300 active:bg-black">
+                <button
+                  onClick={decreaseQuantity}
+                  className=" h-5 font-bold text-lg flex border items-center justify-center px-2 hover:bg-gray-700 hover:text-white cursor-pointer duration-300 active:bg-black"
+                >
                   -
                 </button>
-                <span>{}</span>
-                <button className="border h-5 font-normal text-lg flex items-center justify-center px-2 hover:bg-gray-700 hover:text-white cursor-pointer duration-300 active:bg-black">
+                <span>{baseQuantity}</span>
+                <button
+                  onClick={increaseQuantity}
+                  className=" h-5 font-bold text-lg border flex items-center justify-center px-2 hover:bg-gray-700 hover:text-white cursor-pointer duration-300 active:bg-black"
+                >
                   +
                 </button>
               </div>
             </div>
 
-            <button className=" rounded-md bg-black text-white py-3 px-6 active:bg-gray-800 ">
+            <button
+              onClick={() =>
+                dispatch(
+                  addToCart({
+                    id: details.id,
+                    title: details.title,
+                    price: details.price,
+                    image: details.image,
+                    quantity: baseQuantity,
+                    description: details.description,
+                    category: details.category,
+                    rating: details.rating,
+                  })
+                ) && toast.success(`${details.title} Added to cart`)
+              }
+              className=" rounded-md bg-black text-white py-3 px-6 active:bg-gray-800 "
+            >
               Add to Cart
             </button>
           </div>
@@ -80,6 +116,19 @@ const Product = () => {
           </p>
         </div>
       </article>
+
+      <ToastContainer
+        position="top-left"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </section>
   );
 };

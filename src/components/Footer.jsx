@@ -23,16 +23,17 @@ const Footer = () => {
           <div className="flex text-lg gap-5 text-gray-4000">
             <FaHome className="hover:text-white cursor-pointer duration-300" />
             <FaFacebookF className="hover:text-white cursor-pointer duration-300" />
+            <FaTwitter className="hover:text-white cursor-pointer duration-300" />
+
             <FaInstagram className="hover:text-white cursor-pointer duration-300" />
             <FaYoutube className="hover:text-white cursor-pointer duration-300" />
           </div>
         </div>
         <div>
-          <h2 className="text-2xl font-semibold text-white mb-4">Locate Us</h2>
+          <h2 className="text-2xl font-semibold text-white mb-4">Contact </h2>
           <div className="text-base flex flex-col gap-2">
             <p>123 Lagos Street, Victoria Island, Lagos, Nigeria</p>
             <p>Mobile: +234 812 345 6789</p>
-            <p>Phone: +234 1 234 5678</p>
             <p>Email: info@iM-store.com</p>
           </div>
         </div>

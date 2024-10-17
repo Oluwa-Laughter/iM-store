@@ -1,8 +1,10 @@
 import React from "react";
 import { cart, logo } from "../assets";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+  const productData = useSelector((state) => state.iMstore.productData);
   return (
     <header className="w-full h-20 bg-[#fff] border-b-[1px] sticky top-0 z-50">
       <nav className="max-w-screen-xl h-full mx-auto flex items-center justify-between ">
@@ -28,13 +30,15 @@ const Header = () => {
               Blog
             </li>
           </ul>
-          <div className="relative">
-            <img src={cart} className="w-10 cursor-pointer" alt="cart" />
-            <span className="absolute w-5 h-5 top-1.5 left-2 text-sm flex items-center justify-center font-semibold">
-              0
-            </span>
-          </div>
 
+          <Link to="/cart">
+            <div className="relative">
+              <span className="absolute w-5 h-5 -top-2 -right-2 text-sm flex items-center justify-center font-semibold bg-[#ff9e01] rounded-full">
+                {productData.length}
+              </span>
+              <img src={cart} className="w-10 cursor-pointer" alt="cart" />
+            </div>
+          </Link>
           <img
             className="w-8 h-8 rounded-full"
             src="https://images.pexels.com/photos/264547/pexels-photo-264547.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
