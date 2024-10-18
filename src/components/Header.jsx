@@ -5,6 +5,8 @@ import { useSelector } from "react-redux";
 
 const Header = () => {
   const productData = useSelector((state) => state.iMstore.productData);
+  const userInfo = useSelector((state) => state.iMstore.userInfo);
+
   return (
     <header className="w-full h-20 bg-[#fff] border-b-[1px] sticky top-0 z-50">
       <nav className="max-w-screen-xl h-full mx-auto flex items-center justify-between ">
@@ -39,11 +41,14 @@ const Header = () => {
               <img src={cart} className="w-10 cursor-pointer" alt="cart" />
             </div>
           </Link>
-          <img
-            className="w-8 h-8 rounded-full"
-            src="https://images.pexels.com/photos/264547/pexels-photo-264547.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-            alt="userImg"
-          />
+
+          <Link to="/login">
+            <img
+              className="w-8 h-8 rounded-full"
+              src="https://images.pexels.com/photos/264547/pexels-photo-264547.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt="userImg"
+            />
+          </Link>
         </div>
       </nav>
     </header>
