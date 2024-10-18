@@ -6,7 +6,7 @@ import "./index.css";
 import { PersistGate } from "redux-persist/integration/react";
 import { store, persistor } from "./redux/store";
 import "react-toastify/dist/ReactToastify.css";
-import { app } from "./firebase.config.js";
+import { app } from "./firebase.js";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

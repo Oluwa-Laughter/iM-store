@@ -5,7 +5,7 @@ import { google } from "../assets";
 import { toast, ToastContainer } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { auth } from "../firebase.config"; // Import the updated Firebase configuration
+import { auth } from "../firebase"; // Import the updated Firebase configuration
 import { addUser, removeUser } from "../redux/iMstoreSlice"; // Import the actions
 
 const Login = () => {
@@ -13,7 +13,7 @@ const Login = () => {
   const userInfo = useSelector((state) => state.iMstore.userInfo);
   const navigate = useNavigate();
   const provider = new GoogleAuthProvider();
-
+  console.log(userInfo);
   const handleLogin = () => {
     signInWithPopup(
       auth,
@@ -33,24 +33,24 @@ const Login = () => {
         setTimeout(() => {
           navigate("/");
         }, 2000);
+
+        toast.success("You are Signed In!");
       })
       .catch((error) => {
         // Handle Errors here.
-        console.log(error);
+        toast.error(error);
       });
   };
 
-  // ============== Google Login End here =======================
-  // ============== Logout Start here ===========================
   const handleSignOut = () => {
     signOut(auth)
       .then(() => {
         // Sign-out successful.
-        toast.success("Log Out Successfully!");
+        toast.success("You are Signed Out!");
         dispatch(removeUser());
       })
       .catch((error) => {
-        console.log(error);
+        toast.error(error);
       });
   };
 
