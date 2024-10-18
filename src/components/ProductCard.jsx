@@ -33,7 +33,7 @@ const ProductCard = ({ item }) => {
         <div className="flex justify-between items-center">
           <div>
             <h2 className="font-titleFont text-base font-bold">
-              {`${item.title.substring(0, 10)}...`}
+              {item.title.substring(0, 15)}
             </h2>
           </div>
           <div className="text-sm relative w-28 flex justify-end overflow-hidden">
