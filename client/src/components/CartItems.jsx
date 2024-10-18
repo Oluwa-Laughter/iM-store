@@ -29,7 +29,7 @@ const CartItem = () => {
                   <MdOutlineClose
                     onClick={() =>
                       dispatch(deleteItem(item.id)) &&
-                      toast.error(`${item.title} is removed`)
+                      toast.info(`${item.title} is removed`)
                     }
                     className="text-xl text-gray-600 hover:text-red-600 cursor-pointer duration-300"
                   />

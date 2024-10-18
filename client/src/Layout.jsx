@@ -1,6 +1,6 @@
 import React from "react";
 import { Outlet, ScrollRestoration } from "react-router-dom";
-import { Header, Footer } from "./components/";
+import { Header, Footer } from "./components";
 
 const Layout = () => {
   return (

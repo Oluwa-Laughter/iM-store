@@ -3,11 +3,17 @@ import { useSelector } from "react-redux";
 import { CartItems } from "../components";
 import { HiOutlineArrowLeft } from "react-icons/hi";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+import StripeCheckout from "react-stripe-checkout";
+import axios from "axios";
 
 const Cart = () => {
   const productData = useSelector((state) => state.iMstore.productData);
+  const userInfo = useSelector((state) => state.iMstore.userInfo);
+
   const [totalAmount, setTotalAmount] = useState(0);
   const [shipping, setShipping] = useState(0);
+  const [payNow, setPayNow] = useState(false);
 
   useEffect(() => {
     let price = 0;
@@ -23,6 +29,18 @@ const Cart = () => {
   const finalTotal = (parseFloat(totalAmount) + parseFloat(shipping)).toFixed(
     2
   );
+
+  const handleCheckout = () => {
+    if (userInfo) setPayNow(true);
+    else toast.error("Please Sign In to Checkout");
+  };
+
+  const payment = async (token) => {
+    await axios.post("http://localhost:4242/pay", {
+      amount: totalAmount * 100,
+      token: token,
+    });
+  };
 
   return (
     <section>
@@ -51,9 +69,26 @@ const Cart = () => {
             <p className="font-titleFont font-semibold flex justify-between mt-6">
               Total <span className="text-xl font-bold">${finalTotal}</span>
             </p>
-            <button className="text-base bg-black text-white w-full py-3 mt-6 hover:bg-gray-800 duration-300">
+            <button
+              onClick={handleCheckout}
+              className="text-base bg-black text-white w-full py-3 mt-6 hover:bg-gray-800 duration-300"
+            >
               Proceed to Checkout
             </button>
+
+            {payNow && (
+              <div className="w-full mt-6 flex items-center justify-center">
+                <StripeCheckout
+                  stripeKey={import.meta.env.VITE_STRIPE_PAYMENT_KEY}
+                  name="iM Store"
+                  amount={totalAmount * 100}
+                  label="Pay to iM Store"
+                  description={`Your Payment amount is $${totalAmount}`}
+                  token={payment}
+                  email={userInfo.email}
+                />
+              </div>
+            )}
           </div>
         </div>
       ) : (

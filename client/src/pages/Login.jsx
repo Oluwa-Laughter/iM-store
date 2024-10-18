@@ -5,7 +5,7 @@ import { google } from "../assets";
 import { toast, ToastContainer } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { auth } from "../../firebase"; // Import the updated Firebase configuration
+import { auth } from "../../firebase";
 import { addUser, removeUser } from "../redux/iMstoreSlice"; // Import the actions
 
 const Login = () => {
@@ -13,7 +13,6 @@ const Login = () => {
   const userInfo = useSelector((state) => state.iMstore.userInfo);
   const navigate = useNavigate();
   const provider = new GoogleAuthProvider();
-  console.log(userInfo);
   const handleLogin = () => {
     signInWithPopup(
       auth,
