@@ -11,13 +11,13 @@ const AllProducts = ({ products }) => {
         </h1>
         <span className="w-20 h-[3px] bg-black"></span>
         <p className="max-w-[700px] text-gray-600 text-center">
-          Welcome to our online store! We offer a wide variety of productss to
-          meet all your needs. Whether you're looking for the latest
-          electronics, fashionable clothing, or everyday essentials, we have it
-          all. Our goal is to provide you with the best shopping experience
-          possible, with unbeatable prices and top-notch customer service.
-          Browse through our categories and discover amazing deals and exclusive
-          offers. Happy shopping!
+          Welcome to iM store! We offer a wide variety of products to meet all
+          your needs. Whether you're looking for the latest electronics,
+          fashionable clothing, or everyday essentials, we have it all. Our goal
+          is to provide you with the best shopping experience possible, with
+          unbeatable prices and top-notch customer service. Browse through our
+          categories and discover amazing deals and exclusive offers. Happy
+          shopping!
         </p>
       </div>
       <div className="max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-10 py-10 px-4  ">
