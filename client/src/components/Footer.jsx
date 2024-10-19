@@ -72,7 +72,7 @@ const Footer = () => {
             type="text"
             placeholder="Email"
           />
-          <button className="text-sm border text-white border-t-0 hover:bg-gray-900 active:bg-white active:text-black">
+          <button className="text-sm border text-white  hover:bg-gray-900 active:bg-white active:text-black">
             Subscribe
           </button>
         </div>

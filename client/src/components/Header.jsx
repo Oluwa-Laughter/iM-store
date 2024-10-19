@@ -43,34 +43,40 @@ const Header = () => {
               Contact
             </li>
 
-            <Link to="/cart">
-              <div className="relative">
-                <span className="absolute w-5 h-5 -top-2 -right-2 text-sm flex items-center justify-center font-semibold bg-[#ff9e01] rounded-full">
-                  {productData.length}
-                </span>
-                <img src={cart} className="w-10 cursor-pointer" alt="cart" />
-              </div>
-            </Link>
+            <li>
+              <Link to="/cart">
+                <div className="relative">
+                  <span className="absolute w-5 h-5 -top-2 -right-2 text-sm flex items-center justify-center font-semibold bg-[#ff9e01] rounded-full">
+                    {productData.length}
+                  </span>
+                  <img src={cart} className="w-10 cursor-pointer" alt="cart" />
+                </div>
+              </Link>
+            </li>
 
-            <Link to="/login">
-              {userInfo ? (
-                <img
-                  className="w-8 h-8 rounded-full"
-                  src={userInfo.image}
-                  alt="userImg"
-                />
-              ) : (
-                <button className="text-base text-black font-bold hover:text-orange-900 hover:underline underline-offset-2 decoration-[1px] cursor-pointer duration-300">
-                  Sign In
-                </button>
+            <li>
+              <Link to="/login">
+                {userInfo ? (
+                  <img
+                    className="w-8 h-8 rounded-full"
+                    src={userInfo.image}
+                    alt="userImg"
+                  />
+                ) : (
+                  <button className="text-base text-black font-bold hover:text-orange-900 hover:underline underline-offset-2 decoration-[1px] cursor-pointer duration-300">
+                    Sign In
+                  </button>
+                )}
+              </Link>
+            </li>
+
+            <li>
+              {userInfo && (
+                <p className="text-base font-titleFont font-semibold underline underline-offset-2">
+                  {userInfo.name}
+                </p>
               )}
-            </Link>
-
-            {userInfo && (
-              <p className="text-base font-titleFont font-semibold underline underline-offset-2">
-                {userInfo.name}
-              </p>
-            )}
+            </li>
           </ul>
 
           <button className="md:hidden text-2xl" onClick={handleMenuClick}>
