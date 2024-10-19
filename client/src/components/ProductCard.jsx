@@ -20,7 +20,7 @@ const ProductCard = ({ item }) => {
     <article className="group w-full relative">
       <div
         onClick={handleDetails}
-        className="w-full h-96 overflow-hidden cursor-pointer"
+        className="w-full h-60 sm:h-72 md:h-80 lg:h-96 overflow-hidden cursor-pointer"
       >
         <img
           src={item.image}
@@ -30,7 +30,7 @@ const ProductCard = ({ item }) => {
       </div>
 
       <div className="w-full border-[1px] px-2 py-4">
-        <div className="flex justify-between items-center">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center">
           <div>
             <h2 className="font-titleFont text-base font-bold">
               {item.title.substring(0, 15)}

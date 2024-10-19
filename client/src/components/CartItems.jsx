@@ -15,7 +15,7 @@ const CartItem = () => {
   const dispatch = useDispatch();
   const productData = useSelector((state) => state.iMstore.productData);
   return (
-    <div className="w-2/3 pr-10">
+    <div className="w-full lg:w-2/3 pr-0 lg:pr-10">
       <div className="w-full">
         <h2 className="font-titleFont text-2xl">Shopping Cart</h2>
         <div>
@@ -23,9 +23,9 @@ const CartItem = () => {
             {productData.map((item) => (
               <div
                 key={item.id}
-                className="flex items-center justify-between gap-6 mt-6"
+                className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mt-6"
               >
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 w-full md:w-auto">
                   <MdOutlineClose
                     onClick={() =>
                       dispatch(deleteItem(item.id)) &&
@@ -34,16 +34,18 @@ const CartItem = () => {
                     className="text-xl text-gray-600 hover:text-red-600 cursor-pointer duration-300"
                   />
                   <img
-                    className="w-32 h-32 object-cover"
+                    className="w-24 h-24 md:w-32 md:h-32 object-cover"
                     src={item.image}
                     alt="productImg"
                   />
                 </div>
-                <h2 className="w-52">{item.title}</h2>
-                <p className="w-10">${item.price}</p>
-                <div className="w-52 flex items-center justify-between text-gray-500 gap-4 border p-3">
-                  <p className="text-sm">Quantity</p>
-                  <div className="flex items-center gap-4 text-sm font-semibold">
+                <h2 className="hidden md:block w-52 text-base">{item.title}</h2>
+                <p className="w-full md:w-24 text-sm md:text-base">
+                  ${item.price}
+                </p>
+                <div className="w-full md:w-52 flex items-center justify-between text-gray-500 gap-2 md:gap-4 border p-2 md:p-3">
+                  <p className="text-xs md:text-sm">Quantity</p>
+                  <div className="flex items-center gap-2 md:gap-4 text-xs md:text-sm font-semibold">
                     <span
                       onClick={() =>
                         dispatch(
@@ -57,7 +59,7 @@ const CartItem = () => {
                           })
                         )
                       }
-                      className="border h-5 font-normal text-lg flex items-center justify-center px-2 hover:bg-gray-700 hover:text-white cursor-pointer duration-300 active:bg-black"
+                      className="border h-5 font-normal text-base md:text-lg flex items-center justify-center px-2 hover:bg-gray-700 hover:text-white cursor-pointer duration-300 active:bg-black"
                     >
                       -
                     </span>
@@ -75,16 +77,19 @@ const CartItem = () => {
                           })
                         )
                       }
-                      className="border h-5 font-normal text-lg flex items-center justify-center px-2 hover:bg-gray-700 hover:text-white cursor-pointer duration-300 active:bg-black"
+                      className="border h-5 font-normal text-base md:text-lg flex items-center justify-center px-2 hover:bg-gray-700 hover:text-white cursor-pointer duration-300 active:bg-black"
                     >
                       +
                     </span>
                   </div>
                 </div>
-                <p className="w-14">${item.quantity * item.price}</p>
+                <p className="w-full md:w-24 text-sm md:text-base">
+                  ${item.quantity * item.price}
+                </p>
               </div>
             ))}
           </div>
+
           <button
             onClick={() =>
               dispatch(resetCart()) && toast.error("Your Cart is Empty!")

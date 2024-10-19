@@ -25,8 +25,8 @@ const Product = () => {
 
   return (
     <section>
-      <article className="max-w-screen-xl mx-auto my-10 flex gap-10">
-        <div className="w-2/5 relative">
+      <article className="max-w-screen-xl mx-auto my-10 flex flex-col lg:flex-row gap-10 px-4">
+        <div className="w-full lg:w-2/5 relative">
           <img
             className="w-full h-[550px] object-cover"
             src={details.image}
@@ -38,7 +38,7 @@ const Product = () => {
             </p>
           </div>
         </div>
-        <div className="w-3/5 flex flex-col justify-center gap-12">
+        <div className="w-full lg:w-3/5 flex flex-col justify-center gap-8 lg:gap-12">
           <div className="flex flex-col gap-3">
             <h2 className="text-3xl font-semibold">{details.title}</h2>
 

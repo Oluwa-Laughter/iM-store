@@ -51,9 +51,9 @@ const Cart = () => {
       />
 
       {productData.length > 0 ? (
-        <div className="max-w-screen-xl mx-auto py-20 flex">
+        <div className="max-w-screen-xl mx-auto py-10 sm:py-20 flex flex-col lg:flex-row">
           <CartItems />
-          <div className="w-1/3 bg-[#fafafa] py-6 px-4">
+          <div className="w-full lg:w-1/3 bg-[#fafafa] py-6 px-4 mt-8 lg:mt-0">
             <div className=" flex flex-col gap-6 border-b-[1px] border-b-gray-400 pb-6">
               <h2 className="text-2xl font-medium ">Cart Total</h2>
               <p className="flex items-center gap-4 text-base">
@@ -92,7 +92,7 @@ const Cart = () => {
           </div>
         </div>
       ) : (
-        <div className="max-w-screen-xl mx-auto py-10 flex flex-col items-center gap-2 justify-center">
+        <div className="max-w-screen-xl mx-auto py-10 flex flex-col items-center gap-2 justify-center px-4">
           <p className="text-xl text-[#ff9e01] font-titleFont font-semibold">
             Your Cart is Empty. Please go back to Shop and add products to Cart.
           </p>

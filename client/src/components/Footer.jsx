@@ -13,7 +13,7 @@ import { iMfooter, paymentImg } from "../assets";
 const Footer = () => {
   return (
     <footer className="bg-black text-[#949494] py-20 font-titleFont">
-      <div className="max-w-screen-xl mx-auto grid grid-cols-4">
+      <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-4 ">
         <div className="flex flex-col gap-5">
           <img src={iMfooter} alt="logo" className="h-10 w-20 object-cover" />
           <p className="text-white text-sm tracking-wide">
