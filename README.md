@@ -2,7 +2,8 @@
 
 iM Store is an eCommerce website built using modern web technologies including ReactJS, Tailwind CSS, React Router and React Redux. This project leverages various libraries such as React Toastify for notifications, React Icons for icons, Firebase for user authentication, Axios for API data fetching and Vite as the development environment. Additionally, a bit of Node.js is integrated for the server-side functionalities.
 
-##Live Preview
+## Live Preview
+
 [iM Store](https://imstore.vercel.app/)
 
 ## Features
