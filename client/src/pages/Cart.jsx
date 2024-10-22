@@ -81,9 +81,9 @@ const Cart = () => {
                 <StripeCheckout
                   stripeKey={import.meta.env.VITE_STRIPE_PAYMENT_KEY}
                   name="iM Store"
-                  amount={totalAmount * 100}
+                  amount={finalTotal * 100}
                   label="Pay to iM Store"
-                  description={`Your Payment amount is $${totalAmount}`}
+                  description={`Your Payment amount is $${finalTotal}`}
                   token={payment}
                   email={userInfo.email}
                 />
