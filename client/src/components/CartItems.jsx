@@ -17,7 +17,7 @@ const CartItem = () => {
 
   return (
     <div className="w-full lg:w-2/3 px-4 lg:px-8">
-      <div className="bg-white rounded-lg shadow-md p-6">
+      <div className="bg-white rounded-lg p-6">
         <h2 className="font-titleFont text-3xl mb-8 text-gray-800">
           Your Shopping Cart
         </h2>
@@ -31,7 +31,7 @@ const CartItem = () => {
                 <button
                   onClick={() => {
                     dispatch(deleteItem(item.id));
-                    toast.info(`${item.title} is removed`);
+                    toast.info(`You removed ${item.title}`);
                   }}
                   className="p-1 rounded-full hover:bg-red-100"
                 >
