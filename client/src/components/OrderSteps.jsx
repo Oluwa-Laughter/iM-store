@@ -45,7 +45,7 @@ const OrderSteps = () => {
             <div className="flex items-center justify-center w-16 h-16 bg-[#ff9e01] text-white text-2xl font-bold border-400 rounded-full">
               {step.icon}
             </div>
-            <h3 className="mt-4 text-xl font-semibold text-secondary">
+            <h3 className="mt-4 text-xl font-semibold text-center text-secondary">
               {step.title}
             </h3>
             <p className="mt-2 text-center text-gray-600">{step.description}</p>
