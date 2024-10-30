@@ -52,21 +52,22 @@ const Home = () => {
     <main className="overflow-hidden">
       <Hero />
 
-      {/* Welcome Section */}
+      {/* Welcome  */}
       <div className="flex flex-col items-center gap-5 py-16 bg-gradient-to-b from-white to-gray-50">
         <div className="flex items-center gap-2">
-          <FaFire className="text-orange-500 text-2xl" />
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-800">
-            Trending Fashion Hub
+          <h1 className="text-3xl md:text-4xl font-bold text-center text-gray-800">
+            Welcome to where Shopping is a pleasure!
           </h1>
         </div>
         <span className="w-24 h-[3px] bg-orange-500"></span>
-        <p className="max-w-[800px] text-gray-600 text-center text-lg px-4">
-          Step into iM store, your premier destination for cutting-edge fashion
-          and lifestyle essentials. Experience a curated collection of exclusive
-          designs, premium quality, and unmatched style. Join thousands of
-          satisfied customers who've transformed their wardrobe with our
-          signature pieces.
+        <p className="max-w-[800px] text-gray-600 text-center text-lg px-4 leading-relaxed">
+          Welcome to iM Store, your ultimate destination for all things trendy
+          and essential. Explore our diverse collection from cutting-edge
+          gadgets to stylish apparel - we've curated everything you need under
+          one roof. Experience premium quality, unbeatable prices, and
+          exceptional service that thousands of satisfied customers trust.
+          Whether you're upgrading your tech or refreshing your wardrobe,
+          discover your next favorite piece with us today.
         </p>
 
         {/* Features Grid */}
@@ -97,9 +98,9 @@ const Home = () => {
 
       <OrderSteps />
 
-      {/* Featured Products Section */}
-      <div className="py-16 bg-white">
-        <div className="text-center mb-12">
+      {/* Featured Products */}
+      <div className=" bg-white">
+        <div className="text-center">
           <h2 className="text-3xl font-bold text-gray-800 mb-4">
             Featured Collections
           </h2>

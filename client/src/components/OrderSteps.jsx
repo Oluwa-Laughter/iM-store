@@ -31,7 +31,7 @@ const OrderSteps = () => {
   ];
 
   return (
-    <div className="py-24 bg-white">
+    <div className="py-12 bg-white">
       <h2 className="text-4xl font-bold text-center mb-8 text-primary">
         Shopping Made Easy
       </h2>
