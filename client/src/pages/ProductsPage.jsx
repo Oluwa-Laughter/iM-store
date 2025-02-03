@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { AllProducts } from "../components";
 import { useLoaderData } from "react-router-dom";
 
-const ProductsPage = () => {
+function ProductsPage() {
   const [products, setProducts] = useState([]);
   const data = useLoaderData();
 
@@ -12,7 +12,7 @@ const ProductsPage = () => {
   return (
     <div>
       <AllProducts products={products}>
-        <div className="flex flex-col items-center gap-5">
+        <div className="flex flex-col items-center gap-5 md:mx-auto sm:px-4 ">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 text-center">
             Shop with Us
           </h2>
@@ -29,6 +29,6 @@ const ProductsPage = () => {
       </AllProducts>
     </div>
   );
-};
+}
 
 export default ProductsPage;

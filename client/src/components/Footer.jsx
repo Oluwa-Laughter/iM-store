@@ -10,7 +10,7 @@ import { MdLocationOn } from "react-icons/md";
 import { BsPersonFill, BsPaypal } from "react-icons/bs";
 import { iMfooter, paymentImg } from "../assets";
 
-const Footer = () => {
+function Footer() {
   return (
     <footer className="bg-black text-[#949494] py-20 font-titleFont">
       <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-4 ">
@@ -24,7 +24,6 @@ const Footer = () => {
             <FaHome className="hover:text-white cursor-pointer duration-300" />
             <FaFacebookF className="hover:text-white cursor-pointer duration-300" />
             <FaTwitter className="hover:text-white cursor-pointer duration-300" />
-
             <FaInstagram className="hover:text-white cursor-pointer duration-300" />
             <FaYoutube className="hover:text-white cursor-pointer duration-300" />
           </div>
@@ -79,6 +78,6 @@ const Footer = () => {
       </div>
     </footer>
   );
-};
+}
 
 export default Footer;

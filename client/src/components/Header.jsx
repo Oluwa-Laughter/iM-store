@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { FaBars, FaTimes } from "react-icons/fa";
 
-const Header = () => {
+function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const productData = useSelector((state) => state.iMstore.productData);
   const userInfo = useSelector((state) => state.iMstore.userInfo);
@@ -83,6 +83,6 @@ const Header = () => {
       </nav>
     </header>
   );
-};
+}
 
 export default Header;

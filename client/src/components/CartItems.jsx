@@ -11,7 +11,7 @@ import {
 } from "../redux/iMstoreSlice";
 import { ToastContainer, toast } from "react-toastify";
 
-const CartItem = () => {
+function CartItem() {
   const dispatch = useDispatch();
   const productData = useSelector((state) => state.iMstore.productData);
 
@@ -133,6 +133,6 @@ const CartItem = () => {
       />
     </div>
   );
-};
+}
 
 export default CartItem;

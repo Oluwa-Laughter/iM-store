@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 import StripeCheckout from "react-stripe-checkout";
 import axios from "axios";
 
-const Cart = () => {
+function Cart() {
   const productData = useSelector((state) => state.iMstore.productData);
   const userInfo = useSelector((state) => state.iMstore.userInfo);
 
@@ -108,6 +108,6 @@ const Cart = () => {
       )}
     </section>
   );
-};
+}
 
 export default Cart;

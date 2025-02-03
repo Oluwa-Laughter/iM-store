@@ -3,7 +3,7 @@ import { AllProducts, Hero, OrderSteps } from "../components";
 import { useLoaderData } from "react-router-dom";
 import { FaFire, FaStar, FaGift } from "react-icons/fa";
 
-const Home = () => {
+function Home() {
   const [products, setProducts] = useState([]);
   const data = useLoaderData();
 
@@ -73,6 +73,6 @@ const Home = () => {
       </div>
     </main>
   );
-};
+}
 
 export default Home;

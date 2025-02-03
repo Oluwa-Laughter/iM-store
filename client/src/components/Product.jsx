@@ -5,7 +5,7 @@ import { useLocation } from "react-router-dom";
 import { addToCart } from "../redux/iMstoreSlice";
 import { toast, ToastContainer } from "react-toastify";
 
-const Product = () => {
+function Product() {
   const [details, setDetails] = useState({});
   const [baseQuantity, setBaseQuantity] = useState(1);
 
@@ -131,6 +131,6 @@ const Product = () => {
       />
     </section>
   );
-};
+}
 
 export default Product;

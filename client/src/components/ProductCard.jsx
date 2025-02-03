@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { addToCart } from "../redux/iMstoreSlice";
 import { toast, ToastContainer } from "react-toastify";
 
-const ProductCard = ({ item }) => {
+function ProductCard({ item }) {
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
@@ -91,6 +91,6 @@ const ProductCard = ({ item }) => {
       />
     </article>
   );
-};
+}
 
 export default ProductCard;

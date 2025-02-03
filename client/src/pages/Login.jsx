@@ -8,12 +8,13 @@ import { useNavigate } from "react-router-dom";
 import { auth } from "../../firebase";
 import { addUser, removeUser } from "../redux/iMstoreSlice"; // Import the actions
 
-const Login = () => {
+function Login() {
   const dispatch = useDispatch();
   const userInfo = useSelector((state) => state.iMstore.userInfo);
   const navigate = useNavigate();
   const provider = new GoogleAuthProvider();
-  const handleLogin = () => {
+
+  function handleLogin() {
     signInWithPopup(
       auth,
       provider.setCustomParameters({ prompt: "select_account" })
@@ -40,7 +41,7 @@ const Login = () => {
         // Handle Errors here.
         toast.error(error);
       });
-  };
+  }
 
   const handleSignOut = () => {
     signOut(auth)
@@ -88,6 +89,6 @@ const Login = () => {
       />
     </section>
   );
-};
+}
 
 export default Login;
