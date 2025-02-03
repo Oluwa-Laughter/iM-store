@@ -2,30 +2,31 @@ import React, { useState } from "react";
 import { FaArrowAltCircleLeft, FaArrowCircleRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const Hero = () => {
+const data = [
+  {
+    src: "https://images.pexels.com/photos/6214383/pexels-photo-6214383.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    caption: "Discover the Latest Trends",
+    subText: "Experience Fashion Like Never Before | $20 OFF All Products",
+  },
+  {
+    src: "https://plus.unsplash.com/premium_photo-1672883551961-dd625e47990a?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    caption: "Exclusive Collections",
+    subText: "Limited Time Offer | Save $20 on Your Fashion Journey",
+  },
+  {
+    src: "https://images.pexels.com/photos/5632386/pexels-photo-5632386.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    caption: "Premium Quality Assured",
+    subText: "Luxury Meets Affordability | Flat $20 Discount Today",
+  },
+  {
+    src: "https://plus.unsplash.com/premium_photo-1672883552013-506440b2f11c?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    caption: "New Arrivals Weekly",
+    subText: "Fresh Styles Every Week | Enjoy $20 OFF Store-wide",
+  },
+];
+
+function Hero() {
   const [curSlide, setCurSlide] = useState(0);
-  const data = [
-    {
-      src: "https://images.pexels.com/photos/6214383/pexels-photo-6214383.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      caption: "Discover the Latest Trends",
-      subText: "Experience Fashion Like Never Before | $20 OFF All Products",
-    },
-    {
-      src: "https://plus.unsplash.com/premium_photo-1672883551961-dd625e47990a?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      caption: "Exclusive Collections",
-      subText: "Limited Time Offer | Save $20 on Your Fashion Journey",
-    },
-    {
-      src: "https://images.pexels.com/photos/5632386/pexels-photo-5632386.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      caption: "Premium Quality Assured",
-      subText: "Luxury Meets Affordability | Flat $20 Discount Today",
-    },
-    {
-      src: "https://plus.unsplash.com/premium_photo-1672883552013-506440b2f11c?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      caption: "New Arrivals Weekly",
-      subText: "Fresh Styles Every Week | Enjoy $20 OFF Store-wide",
-    },
-  ];
 
   const prevSlide = () => {
     setCurSlide(curSlide === 0 ? data.length - 1 : curSlide - 1);
@@ -84,6 +85,6 @@ const Hero = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Hero;

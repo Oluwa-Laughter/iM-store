@@ -1,7 +1,7 @@
 import React from "react";
 import ProductCard from "./ProductCard";
 
-const AllProducts = ({ products, children }) => {
+function AllProducts({ products, children }) {
   return (
     <section className="py-10">
       {children}
@@ -12,6 +12,6 @@ const AllProducts = ({ products, children }) => {
       </div>
     </section>
   );
-};
+}
 
 export default AllProducts;
