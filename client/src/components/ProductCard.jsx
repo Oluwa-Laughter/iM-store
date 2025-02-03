@@ -56,7 +56,7 @@ function ProductCard({ item }) {
                     category: item.category,
                     rating: item.rating,
                   })
-                ) && toast.success(`You added ${item.title}to cart`)
+                ) && toast.success(`You added ${item.title} to cart`)
               }
               className="absolute z-20 w-[100px] text-gray-500 hover:text-gray-900 flex items-center gap-1 top-0 transform -translate-x-32 group-hover:translate-x-0 transition-transform cursor-pointer duration-500"
             >
